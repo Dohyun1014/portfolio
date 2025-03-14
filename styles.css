@@ -1,36 +1,39 @@
 :root {
     --primary-color: #00aaff;
-    --secondary-color: #a1bcffdc;
+    --secondary-color: #a1bcff;
     --background-1: linear-gradient(135deg, #FF9A76, #A7E9AF);
     --background-2: linear-gradient(135deg, #FF77AA, #C8A2C8);
     --background-3: linear-gradient(135deg, #77DDFF, #FFF275);
 }
 
-body {
+html, body {
     margin: 0;
     font-family: Arial, sans-serif;
     color: white;
     text-align: center;
     overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory; 
 }
 
-a{
+a {
     text-decoration: none;
     color: white;
 }
 
 section {
-    height: 110vh;
+    height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     width: 100%;
+    scroll-snap-align: start; 
 }
 
 .hero {
     background: url('./img/Firefly\ 핑크색가\ 하늘색의\ 구름사진\ 5317.jpg') no-repeat center center/cover;
-    opacity: 0.7;
+    opacity: 0.9; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,10 +67,10 @@ section {
     font-size: 1.5rem;
 }
 
-
 .profile { background: var(--background-2); }
 .interests { background: var(--background-3); }
 .portfolio { background: var(--background-1); }
+
 .contact {
     background: var(--secondary-color);
     height: 20vh;
@@ -89,25 +92,22 @@ section {
     font-size: 2rem;
     font-weight: bold;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-    font-family: 'Ownglyph_StudyHard-Rg', sans-serif;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
     transform: translateY(0);
 }
 
 .subtitle:hover {
-    transform: translateY(-10px); /* 살짝 위로 이동 */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* 그림자 강조 */
+    transform: translateY(-10px); 
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); 
 }
-
 
 .title, .slide-in, .Subtitle {
     transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
-.Subtitle{
+.Subtitle {
     font-family: 'Ownglyph_StudyHard-Rg', sans-serif;
 }
-
 
 .slide-in { transform: translateX(-50px); }
 .Subtitle { transform: scale(0.8); }
@@ -116,27 +116,108 @@ section {
     font-size: 0.8rem;
 }
 
-section {
-    overflow: visible !important;
-}
-
-
-.hero > .header_text{
-    position: sticky;
-    top: 50px; /* 화면에 고정할 위치 */
-}
-
-h1 .title{
+h1 .title {
     z-index: 99;
     color: white;
 }
 
-.profile{
+.profile {
     font-size: 30px;
     font-family: 'Ownglyph_StudyHard-Rg', sans-serif;
 }
 
-.title-text{
+.title-text {
     font-weight: bold;
     font-size: 2em;
+}
+
+html, body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    overflow: hidden; 
+    scroll-behavior: smooth;
+}
+
+.container {
+    scroll-snap-type: y mandatory; 
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    scroll-snap-align: start; 
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 5rem;
+    background: #bb8aff7c; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    z-index: 1;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 4.5rem; 
+    padding: 0;
+    margin: 10px;
+}
+
+
+.header nav ul li a {
+    color: white;
+    display: inline-block;
+    text-decoration: none;
+    width: 5vw;
+    font-size: 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    transition: color 0.3s;
+    border-radius: 15px;
+    padding: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.header nav ul li a:hover {
+    background-color: #00aaffa9 ;
+}
+
+  @media (max-width: 1024px) {
+    .header {
+        height: 3.5rem; 
+    }
+
+    .header nav ul {
+        gap: 3rem; 
+    }
+
+    .header nav ul li a {
+        font-size: 1rem; 
+        width: auto; 
+        padding: 10px; 
+        text-align: center;
+    }
+
+    .subtitle {
+        width: 300px; 
+    }
+
+    .grid {
+        flex-direction: column;
+        align-items: center; 
+    }
 }

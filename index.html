@@ -8,14 +8,24 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-    <header class="hero">
-        <div class="header-text">
-            <h1 class="title">안녕하세요! 저는 도현입니다.</h1>
-            <p class="title">포트폴리오를 통해 저를 소개합니다.</p>
-        </div>
+    <header class="header">
+        <nav>
+            <ul>
+                <li><a id="header1" href="#hero">홈</a></li>
+                <li><a id="header2" href="#profile">소개</a></li>
+                <li><a id="header3" href="#interests">관심사</a></li>
+                <li><a id="header4" href="#portfolio">포트폴리오</a></li>
+                <li><a id="header5" href="#contact">연락처</a></li>
+            </ul>
+        </nav>
     </header>
+    <section id="home" class="hero">
+        <div class="section-text">
+            <h1 class="title">안녕하세요! 저는 도현입니다.</h1>
+        </div>
+    </section>
     
-    <section class="profile">
+    <section id="profile" class="profile">
         <img src="./img/두산베어스 로고.svg" alt="도현의 프로필 사진" class="slide-in">
         <div class="slide-in">
             <h2 class="title">도현</h2>
@@ -23,7 +33,7 @@
         </div>
     </section>
     
-    <section class="interests">
+    <section id="interests" class="interests">
         <h2 class="title-text">관심사</h2>
         <div class="grid">
             <a href="#"><div class="subtitle">🎬 방송 & 영상 제작</div></a>
@@ -32,7 +42,7 @@
         </div>
     </section>
     
-    <section class="portfolio">
+    <section id="portfolio" class="portfolio">
         <h2 class="title-text">포트폴리오</h2>
         <div class="grid">
             <a href="#"><div class="subtitle">💻 웹 프로젝트 1</div></a>
@@ -41,9 +51,31 @@
         </div>
     </section>
 
-    <section class="contact">
+    <section id="contact" class="contact">
         <h2 class="title-text">연락하기</h2>
         <p class="title-text">이메일: example@email.com</p>
     </section>
+
+    <script>
+        document.getElementById("header1").addEventListener("click", function() {
+            document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.getElementById("header2").addEventListener("click", function() {
+            document.getElementById("profile").scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.getElementById("header3").addEventListener("click", function() {
+            document.getElementById("interests").scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.getElementById("header4").addEventListener("click", function() {
+            document.getElementById("portfolio").scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.getElementById("header5").addEventListener("click", function() {
+            document.getElementById("portfolio").scrollIntoView({ behavior: "smooth" });
+        });
+    </script>
 </body>
 </html>
